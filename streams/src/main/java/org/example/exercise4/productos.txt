@@ -1,0 +1,20 @@
+Code: CG-001
+Name: Producto 1
+Color: Azul
+ Price: 10.99
+Code: CG-002
+Name: Producto 2
+Color: Rojo
+ Price: 15.99
+Code: CG-003
+Name: Producto 3
+Color: Verde
+ Price: 5.99
+Code: CG-004
+Name: Producto 4
+Color: Amarillo
+ Price: 12.99
+Code: CG-005
+Name: Producto 5
+Color: Azul
+ Price: 8.99
