@@ -3,29 +3,50 @@ package com.restaurant.restaurant.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.antlr.v4.runtime.misc.NotNull;
 
-@Builder
-@NoArgsConstructor
+import jakarta.validation.constraints.NotEmpty;
+
+
+
+@Entity(name = "product")
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@Entity
-@Table(name = "product")
+@Data
+@ToString
+@Builder
+@EqualsAndHashCode
 public class ProductEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, length = 100)
+
+    @Column(unique = true, length = 36)
+    @NotNull
     private String uuid;
-    @Column(nullable = false, length = 255)
+
+    @Column(unique = true)
+    @NotNull
+    @NotEmpty
     private String name;
-    @Column(nullable = false, length = 50)
+
+    @Enumerated(EnumType.STRING)
+    @NotNull
     private CategoryProduct category;
-    @Column(nullable = false, length = 512)
+
+    @Column(length = 511)
+    @NotNull
     private String description;
-    @Column(nullable = false, length = 100)
+
+    @Column
+    @NotNull
     private Double price;
-    @Column(nullable = false, length = 100)
+
+    @Column(columnDefinition = "boolean default true", nullable = false)
     private Boolean available;
+
+    @Column(columnDefinition = "boolean default true", nullable = false)
+    private Boolean removed;
 }

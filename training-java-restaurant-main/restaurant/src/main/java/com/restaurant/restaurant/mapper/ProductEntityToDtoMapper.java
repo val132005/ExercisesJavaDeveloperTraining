@@ -4,9 +4,10 @@ import com.restaurant.restaurant.entity.CategoryProduct;
 import com.restaurant.restaurant.entity.ProductEntity;
 import com.restaurant.restaurant.model.ProductDto;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 public class ProductEntityToDtoMapper implements Converter<ProductEntity, ProductDto> {
     public static ProductDto mapToDTO(ProductEntity productEntity){
         ProductDto dto = new ProductDto();

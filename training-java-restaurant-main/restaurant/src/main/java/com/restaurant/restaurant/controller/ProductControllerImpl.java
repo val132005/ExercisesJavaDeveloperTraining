@@ -30,7 +30,7 @@ public class ProductControllerImpl implements IProductController {
 
     @GetMapping(path = {"/{id}"})
     public ProductDto getProduct(@PathVariable Long id){
-        ProductEntity productEntity = productService.getById(id);
+        ProductEntity productEntity = productService.findById(id);
         return ProductEntityToDtoMapper.mapToDTO(productEntity);
 
     }
